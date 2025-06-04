@@ -16,7 +16,7 @@ const Login = () => {
         <Bluetext link={"/login"} text={"Forgot Password?"} />
       </div>
       <div className="mt-[14rem]">
-        <Bluetext link={"/signup"} text={"Dont't have an account? Sign up"} />
+        <Bluetext link={"/"} text={"Dont't have an account? Sign up"} />
       </div>
       <GoogleCard />
     </div>
