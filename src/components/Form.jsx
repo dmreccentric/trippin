@@ -18,7 +18,7 @@ const Form = ({ login, title }) => {
 
           alert("Logged In");
 
-          navigate("/home");
+          navigate("/slides");
         }}
       >
         <Inputs
