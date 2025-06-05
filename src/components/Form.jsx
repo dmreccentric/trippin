@@ -16,7 +16,8 @@ const Form = ({ login, title }) => {
           if (password.value.length < 8)
             return alert("password must be up to 8 characters");
 
-          alert(`Signed up using: ${email.value}`);
+          alert("Logged In");
+
           navigate("/home");
         }}
       >
@@ -51,7 +52,7 @@ const Form = ({ login, title }) => {
             return alert("password must be up to 8 characters");
           if (password.value !== confirmPassword.value)
             return alert("Passwords do not match");
-          alert("Logged In");
+          alert(`Signed up using: ${email.value}`);
 
           navigate("/login");
         }}
