@@ -1,8 +1,8 @@
 import React from "react";
 import Bluetext from "./Bluetext";
 
-const Cardheader = ({ text, view, link }) => {
-  if (view) {
+const Cardheader = ({ text, noView, link }) => {
+  if (noView) {
     return (
       <div className="flex justify-between mx-5">
         <p className="font-semibold text-2xl">{text}</p>
@@ -11,8 +11,8 @@ const Cardheader = ({ text, view, link }) => {
   } else
     return (
       <div className="flex justify-between mx-5">
-        <p className="font-semibold text-2xl">{text}</p>
-        <Bluetext link={link} text={"View more"} />
+        <p className="font-semibold text-[20px]">{text}</p>
+        <Bluetext small link={link} text={"View more"} />
       </div>
     );
 };

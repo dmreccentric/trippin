@@ -8,7 +8,7 @@ const Categories = () => {
       <Cardheader text={"Categories"} />
       <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide mt-2">
         {categories.map((item, index) => (
-          <div key={index} className="relative h-[23rem] min-w-[24rem]">
+          <div key={index} className="relative h-[18rem] min-w-[18rem]">
             <img
               src={item.img}
               alt={item.name}
