@@ -6,7 +6,7 @@ const Categories = () => {
   return (
     <div className="mt-4 ">
       <Cardheader text={"Categories"} />
-      <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide mt-1 pb-50">
+      <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide bg-[#e9e9e9] mt-1 pb-50">
         {categories.map((item, index) => (
           <div key={index} className="relative h-[18rem] min-w-[18rem]">
             <img
