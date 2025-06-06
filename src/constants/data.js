@@ -18,3 +18,50 @@ export const data = [
       "We guide ou through every step with curated tips, local insights, and safety features- so you always feel prepared, even far from home.",
   },
 ];
+
+export const Recommendation = [
+  {
+    id: 1,
+    city: "bangkok",
+    country: "thailand",
+    stars: 4,
+    about:
+      "A popular indonesian island known for its unique blend for natural beauty, rich cultures and vibrant tourism",
+    temperature: "75",
+    reviews: "156",
+    img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749179589/IMG_2770_qokkoc.jpg",
+  },
+  {
+    id: 2,
+    city: "tokyo",
+    country: "japan",
+    stars: 4,
+    about:
+      "japan is an island country in east asia. Located in the pacific ocean of the northeast coast of the asian mainland, it is boarded on the west by the sea of japan.",
+    temperature: "67",
+    reviews: "123",
+    img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749180303/62d2b7fd-d63d-4d0e-8d7b-8da6511db27d_yikpjd.jpg",
+  },
+  {
+    id: 2,
+    city: "tokyo",
+    country: "japan",
+    stars: 4,
+    about:
+      "japan is an island country in east asia. Located in the pacific ocean of the northeast coast of the asian mainland, it is boarded on the west by the sea of japan.",
+    temperature: "67",
+    reviews: "123",
+    img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749180303/62d2b7fd-d63d-4d0e-8d7b-8da6511db27d_yikpjd.jpg",
+  },
+];
+
+export const categories = [
+  {
+    name: "beach",
+    img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749179677/d6268e25-bfdb-40e9-baeb-0dd25184ac4e_kofwlx.jpg",
+  },
+  {
+    name: "resort",
+    img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749179676/28eb38c3-ddfe-4e54-960a-08cf51c1419b_nefqyi.jpg",
+  },
+];
