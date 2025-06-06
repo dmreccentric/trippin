@@ -4,9 +4,9 @@ import { categories } from "../constants/data";
 
 const Categories = () => {
   return (
-    <div className="mt-7">
+    <div className="mt-4 ">
       <Cardheader text={"Categories"} />
-      <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide mt-2">
+      <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide mt-1 mb-30">
         {categories.map((item, index) => (
           <div key={index} className="relative h-[18rem] min-w-[18rem]">
             <img
