@@ -4,7 +4,7 @@ import { categories } from "../constants/data";
 
 const Categories = () => {
   return (
-    <div className="mt-4 ">
+    <div className="mt-4 bg-[#e9e9e9]">
       <Cardheader text={"Categories"} />
       <div className="flex ml-5 gap-7 overflow-auto scrollbar-hide bg-[#e9e9e9] mt-1 pb-50">
         {categories.map((item, index) => (
