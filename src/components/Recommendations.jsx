@@ -13,7 +13,7 @@ const Recommendations = () => {
         {Recommendation.map((item, index) => (
           <div
             key={index}
-            className="h-[17rem] min-w-[18rem] bg-white mt-3  rounded-2xl "
+            className="h-[17rem] min-w-[18rem] bg-white mt-1  rounded-2xl "
           >
             <div className="relative w-full">
               <img
