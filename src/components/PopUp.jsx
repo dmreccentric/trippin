@@ -12,7 +12,7 @@ const PopUp = ({ item }) => {
     };
   }, []);
   return (
-    <div className="fixed top-0 left-0 w-full bg-[#e9e9e9] min-h-[88%] rounded-t-3xl z-40 shadow-lg transition-transform duration-300">
+    <div className="fixed bottom-0 left-0 w-full bg-[#e9e9e9] min-h-[90%] rounded-t-3xl z-40 shadow-lg transition-transform duration-300">
       <div className="relative">
         <img
           src={item.img}
