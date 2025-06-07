@@ -17,7 +17,7 @@ const PopUp = ({ item }) => {
         <img
           src={item.img}
           alt={item.city}
-          className="w-full h-[17rem] rounded-t-3xl object-cover"
+          className="w-full h-[14rem] rounded-t-3xl object-cover"
         />
         <div className="absolute bottom-0 left-0 w-full h-23 bg-gradient-to-t from-white to-transparent" />
         <h6 className="capitalize absolute bottom-1.5 left-4 text-[20px] font-semibold">
@@ -27,10 +27,10 @@ const PopUp = ({ item }) => {
 
       <div className=" relative pt-1">
         <div className="absolute top-0 left-0 w-full h-1 bg-white" />
-        <div className="bg-white px-4 min-h-[10rem] rounded-b-3xl">
+        <div className="bg-white px-4 min-h-[8rem] rounded-b-3xl">
           <div className="flex items-center gap-4">
             <div className="flex gap-1 items-center text-gray-600 my-2">
-              <GrLocation className="text-[20px]" />
+              <GrLocation className="text-[18px]" />
               <span className="capitalize">{item.country}</span>
             </div>
             <div className="flex gap-1 mb-2 text-[12px]">
@@ -44,7 +44,7 @@ const PopUp = ({ item }) => {
               ))}
             </div>
           </div>
-          <p className="text-sm text-gray-700">{item.about}</p>
+          <p className="text-xs text-gray-700">{item.about}</p>
         </div>
         <Belowpopup items={item} />
         <div className="mt-8 px-5">

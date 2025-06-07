@@ -6,12 +6,12 @@ const Belowpopup = ({ items, show }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div>
-      <div className="flex gap-5 mx-6 my-7 overflow-auto scrollbar-hide">
+      <div className="flex gap-9 mx-6 my-6 overflow-auto scrollbar-hide">
         {Recommendation.map((item, i) => (
           <div
             onClick={() => setSelectedItem(item)}
             key={i}
-            className="min-w-20 h-20 "
+            className="w-16 h-16"
           >
             <img
               src={item.img}
@@ -30,15 +30,15 @@ const Belowpopup = ({ items, show }) => {
       </div>
       <div>
         <div className="flex mx-6 gap-6">
-          <div className="bg-white py-3 w-full rounded-2xl">
-            <p className="mb-3 text-xs text-center">Temperature</p>
-            <p className="mb-3 text-center text-[20px] text-blue-600">
+          <div className="bg-white pt-3 w-full rounded-2xl">
+            <p className="mb-1 text-xs text-center">Temperature</p>
+            <p className=" text-center text-[20px] text-blue-600">
               {items.temperature}°C
             </p>
           </div>
           <div className="bg-white py-3 w-full  rounded-2xl ">
-            <p className="mb-3 text-xs text-center">Reviews</p>
-            <p className="mb-3 text-center text-[20px] text-blue-600">
+            <p className="mb-1 text-xs text-center">Reviews</p>
+            <p className=" text-center text-[20px] text-blue-600">
               {items.reviews}
             </p>
           </div>
