@@ -3,6 +3,7 @@ import Home from "../src/pages/Home";
 import Signup from "../src/pages/SignUp";
 import Login from "../src/pages/Login";
 import Slides from "../src/pages/Slides";
+import PopUp from "./components/PopUp";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/slides",
     element: <Slides />,
+  },
+  {
+    path: "/popup",
+    element: <PopUp />,
   },
 ]);
 

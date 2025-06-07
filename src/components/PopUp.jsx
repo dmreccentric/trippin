@@ -1,0 +1,56 @@
+import { GrLocation } from "react-icons/gr";
+import { FaStar } from "react-icons/fa6";
+import Belowpopup from "./Belowpopup";
+import Reuseablebtn from "./Reuseablebtn";
+
+const PopUp = ({ item }) => {
+  return (
+    <div className="fixed bottom-0 left-0 w-full bg-[#e9e9e9] h-[90%] rounded-t-3xl z-50 shadow-lg transition-transform duration-300">
+      {/* <div className="flex justify-end p-4">
+        <button onClick={onClose} className="text-gray-500 text-xl">
+          ×
+        </button>
+      </div> */}
+      <div className="relative">
+        <img
+          src={item.img}
+          alt={item.city}
+          className="w-full h-[17rem] rounded-t-3xl object-cover"
+        />
+        <div className="absolute bottom-0 left-0 w-full h-23 bg-gradient-to-t from-white to-transparent" />
+        <h6 className="capitalize absolute bottom-1.5 left-4 text-[20px] font-semibold">
+          {item.city}
+        </h6>
+      </div>
+
+      <div className=" relative pt-1">
+        <div className="absolute top-0 left-0 w-full h-1 bg-white" />
+        <div className="bg-white px-4 min-h-[10rem] rounded-b-3xl">
+          <div className="flex items-center gap-4">
+            <div className="flex gap-1 items-center text-gray-600 my-2">
+              <GrLocation className="text-[20px]" />
+              <span className="capitalize">{item.country}</span>
+            </div>
+            <div className="flex gap-1 mb-2 text-[12px]">
+              {[...Array(5)].map((_, i) => (
+                <FaStar
+                  key={i}
+                  className={
+                    i < item.stars ? "text-amber-400" : "text-gray-300"
+                  }
+                />
+              ))}
+            </div>
+          </div>
+          <p className="text-sm text-gray-700">{item.about}</p>
+        </div>
+        <Belowpopup items={item} />
+        <div className="mt-8 px-5">
+          <Reuseablebtn title={"book"} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PopUp;
