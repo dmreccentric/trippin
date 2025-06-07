@@ -2,7 +2,7 @@ import { Recommendation } from "../constants/data";
 import { useState } from "react";
 import PopUp from "./PopUp";
 
-const Belowpopup = ({ items }) => {
+const Belowpopup = ({ items, show }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div>
