@@ -4,6 +4,7 @@ import Signup from "../src/pages/SignUp";
 import Login from "../src/pages/Login";
 import Slides from "../src/pages/Slides";
 import PopUp from "./components/PopUp";
+import Explore from "./pages/Explore";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/popup",
     element: <PopUp />,
+  },
+  {
+    path: "/explore",
+    element: <Explore />,
   },
 ]);
 

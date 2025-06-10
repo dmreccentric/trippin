@@ -7,7 +7,7 @@ import Bluetext from "../components/Bluetext";
 
 const Slides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate(); // FIXED
+  const navigate = useNavigate();
 
   const handleNext = () => {
     if (currentIndex === data.length - 1) {
@@ -24,7 +24,7 @@ const Slides = () => {
 
   return (
     <div>
-      <div className="h-[40rem] w-screen">
+      <div className="h-[22rem] w-screen">
         <img src={item.img} alt={item.title} className="w-full h-full" />
       </div>
       <div className="mt-14 mx-5">

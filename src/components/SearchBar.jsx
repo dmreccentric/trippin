@@ -2,12 +2,15 @@ import React from "react";
 import { TbBell } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
 
-const SearchBar = ({ text }) => {
+const SearchBar = ({ text, change, iconSize }) => {
+  const someChanges = change ? `text-[1.1rem]` : "";
   return (
     <div className="mx-5 pt-3">
-      <div className="flex justify-between text-[1.5rem] items-center font-semibold ">
-        <h2>{text}</h2>
-        <TbBell />
+      <div
+        className={`flex justify-between text-[1.5rem] items-center font-semibold`}
+      >
+        <h2 className={`${someChanges}`}>{text}</h2>
+        <TbBell className={iconSize ? "text-3xl" : ""} />
       </div>
       <div className="relative mt-4">
         <input

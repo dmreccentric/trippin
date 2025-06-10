@@ -33,7 +33,7 @@ const PopUp = ({ item }) => {
               <GrLocation className="text-[18px]" />
               <span className="capitalize">{item.country}</span>
             </div>
-            <div className="flex gap-1 mb-2 text-[12px]">
+            <div className="flex gap-1 mb-2 text-[9px]">
               {[...Array(5)].map((_, i) => (
                 <FaStar
                   key={i}
