@@ -80,3 +80,13 @@ export const categories = [
     img: "https://res.cloudinary.com/dzhhpr7f1/image/upload/v1749179676/28eb38c3-ddfe-4e54-960a-08cf51c1419b_nefqyi.jpg",
   },
 ];
+
+export const list = [
+  "most visited",
+  "cheapest",
+  "closest to me",
+  "adventurous",
+  "urban",
+  "high life",
+  "remote",
+];

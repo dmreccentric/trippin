@@ -11,12 +11,12 @@ const Recommendations = () => {
   return (
     <div>
       <Cardheader text={"Recommendation"} linkText={"View more"} />
-      <div className="flex ml-5 gap-5 overflow-auto scrollbar-hide">
+      <div className="flex ml-5 gap-5 overflow-auto scrollbar-hide ">
         {Recommendation.map((item, index) => (
           <div
             onClick={() => setSelectedItem(item)}
             key={index}
-            className="h-[17rem] min-w-[18rem] bg-white mt-1  rounded-2xl "
+            className="h-[17rem] min-w-[18rem] bg-white mt-1  rounded-2xl hover:cursor-pointer"
           >
             <div className="relative w-full">
               <img
