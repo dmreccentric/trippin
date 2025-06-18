@@ -2,9 +2,11 @@ import { GrLocation } from "react-icons/gr";
 import { FaStar } from "react-icons/fa6";
 import Belowpopup from "./Belowpopup";
 import Reuseablebtn from "./Reuseablebtn";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Bookings from "../pages/Bookings";
 
 const PopUp = ({ item }) => {
+  const [book, setBook] = useState(null);
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -48,9 +50,10 @@ const PopUp = ({ item }) => {
         </div>
         <Belowpopup items={item} />
         <div className="mt-8 px-5">
-          <Reuseablebtn title={"book"} />
+          <Reuseablebtn onClick={() => setBook(true)} title={"book"} />
         </div>
       </div>
+      {book && <Bookings items={item} onClose={() => setBook(null)} />}
     </div>
   );
 };

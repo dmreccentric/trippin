@@ -36,7 +36,7 @@ const Recommendations = () => {
                   <GrLocation className="text-[15px]" />
                   <h6 className="capitalize">{item.country}</h6>
                 </div>
-
+                symptom
                 <div className="flex gap-1 text-xs">
                   {[...Array(5)].map((_, i) => (
                     <FaStar

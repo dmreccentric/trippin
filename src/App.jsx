@@ -5,6 +5,7 @@ import Login from "../src/pages/Login";
 import Slides from "../src/pages/Slides";
 import PopUp from "./components/PopUp";
 import Explore from "./pages/Explore";
+import Booking from "./pages/Bookings";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/explore",
     element: <Explore />,
+  },
+  {
+    path: "/booking",
+    element: <Booking />,
   },
 ]);
 
