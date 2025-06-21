@@ -53,7 +53,11 @@ const PopUp = ({ item }) => {
           <Reuseablebtn onClick={() => setBook(true)} title={"book"} />
         </div>
       </div>
-      {book && <Bookings items={item} onClose={() => setBook(null)} />}
+      {book && (
+        <div className="">
+          <Bookings items={item} onClose={() => setBook(null)} />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,57 +1,47 @@
+import { RecBit } from "./RecBit";
 import { Recommendation } from "../constants/data";
 import { useState } from "react";
-import { GrLocation } from "react-icons/gr";
-import { FaStar } from "react-icons/fa6";
+
 import Cardheader from "./Cardheader";
 import PopUp from "./PopUp";
 
-const Recommendations = () => {
+const Recommendations = ({
+  search,
+  widthFull,
+  flex,
+  text = "Search results",
+  margin,
+  filteredItems = [],
+  mightLike,
+}) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const fullWidth = widthFull ? "w-full" : "min-w-[18rem]";
+  const useGrid = flex ? "flex flex-col" : "flex";
+  const rightMargin = margin ? "ml-5 h-fit" : "h-80";
   return (
-    <div>
-      <Cardheader text={"Recommendation"} linkText={"View more"} />
-      <div className="flex ml-5 gap-5 overflow-auto scrollbar-hide ">
-        {Recommendation.map((item, index) => (
-          <div
-            onClick={() => setSelectedItem(item)}
-            key={index}
-            className="h-[17rem] min-w-[18rem] bg-white mt-1  rounded-2xl hover:cursor-pointer"
-          >
-            <div className="relative w-full">
-              <img
-                src={item.img}
-                alt={item.city}
-                className="w-full h-[8rem] rounded-t-2xl object-cover"
+    <div className="mt-3">
+      <Cardheader text={`${filteredItems?.length || 0} ${text}`} blueText />
+      <div
+        className={`${rightMargin} gap-5 overflow-auto scrollbar-hide ${useGrid}`}
+      >
+        {!search
+          ? Recommendation.map((item, index) => (
+              <RecBit
+                setSelectedItem={setSelectedItem}
+                item={item}
+                index={index}
+                fullWidth={fullWidth}
               />
-              <div className="absolute bottom-0 left-0 w-full h-23 bg-gradient-to-t from-white to-transparent" />
-              <h6 className="capitalize absolute bottom-1.5 left-4 text-[20px] font-normal">
-                {item.city}
-              </h6>
-            </div>
-
-            <div className=" bg-white h-35 rounded-b-2xl mx-4 text-[12px] font-normal  text-gray-700">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex gap-1 items-center">
-                  <GrLocation className="text-[15px]" />
-                  <h6 className="capitalize">{item.country}</h6>
-                </div>
-                symptom
-                <div className="flex gap-1 text-xs">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar
-                      key={i}
-                      className={
-                        i < item.stars ? "text-amber-400" : "text-gray-300"
-                      }
-                    />
-                  ))}
-                </div>
-              </div>
-              <p>{item.about.split(".")[0].trim() + "."}</p>
-            </div>
-          </div>
-        ))}
+            ))
+          : filteredItems.map((item, index) => (
+              <RecBit
+                setSelectedItem={setSelectedItem}
+                item={item}
+                index={index}
+                fullWidth={fullWidth}
+              />
+            ))}
 
         {selectedItem && (
           <>
@@ -60,6 +50,23 @@ const Recommendations = () => {
               className="fixed inset-0 bg-[#18171759] z-40"
             />
             <PopUp item={selectedItem} onClose={() => setSelectedItem(null)} />
+          </>
+        )}
+      </div>
+      <div className={`mt-3 ${useGrid}`}>
+        {mightLike && filteredItems.length > 1 && (
+          <>
+            <Cardheader text={"You might also like"} blueText />
+            <div>
+              {Recommendation.map((item, index) => (
+                <RecBit
+                  setSelectedItem={setSelectedItem}
+                  item={item}
+                  index={index}
+                  fullWidth={fullWidth}
+                />
+              ))}
+            </div>
           </>
         )}
       </div>

@@ -22,7 +22,7 @@ export const data = [
 export const Recommendation = [
   {
     id: 1,
-    city: "bangkok",
+    city: "bankok",
     country: "thailand",
     stars: 5,
     about:
@@ -97,7 +97,7 @@ export const flight = [
     airline: "air dump",
     from: "abuja",
     to: "bankok",
-    date: "26 May 2025",
+    date: "21 June 2025",
     departureTime: "04:30",
     arivalTime: "07:12",
     cheap: true,

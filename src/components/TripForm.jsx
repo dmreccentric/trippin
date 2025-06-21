@@ -5,21 +5,33 @@ import { VscLocation } from "react-icons/vsc";
 import Reuseablebtn from "./Reuseablebtn";
 import { uniqBy } from "lodash";
 
-const TripForm = ({ data }) => {
+const TripForm = ({
+  data = [],
+  formValue = {},
+  setFormValue = () => {},
+  onSubmit = () => {},
+}) => {
   const today = new Date().toISOString().split("T")[0];
-  const [date, setDate] = useState(today);
+  //   const [date, setDate] = useState(today);
   if (!data) return null;
 
   const uniqueItems = uniqBy(flight, "from");
+  const handleChange = (e) => {
+    setFormValue((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="flex flex-col">
-        <label htmlFor="takeoff">From</label>
+        <label htmlFor="from">From</label>
         <div className="relative w-full">
           <select
-            name="takeof"
-            id="takeoff"
-            defaultValue=""
+            name="from"
+            id="from"
+            value={formValue.from}
+            onChange={handleChange}
             className="bg-gray-200 py-4 rounded-lg text-sm w-full pl-8"
           >
             <option value="" disabled>
@@ -36,14 +48,19 @@ const TripForm = ({ data }) => {
       </div>
 
       <div className="flex flex-col mt-1">
-        <label htmlFor="destination">To</label>
+        <label htmlFor="to">To</label>
         <div className="relative w-full">
           <select
-            name="destination"
-            id="destination"
-            defaultValue={data.city}
+            name="to"
+            id="to"
+            value={formValue.to}
+            onChange={handleChange}
+            // defaultValue={data.city}
             className="bg-gray-200 py-4 pl-8 rounded-lg text-sm w-full capitalize"
           >
+            <option value="" disabled>
+              Select destination
+            </option>
             {Recommendation.map((item) => (
               <option
                 key={item.id}
@@ -63,8 +80,9 @@ const TripForm = ({ data }) => {
           <input
             type="date"
             id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            name="date"
+            value={formValue.date}
+            onChange={handleChange}
             className="bg-gray-200 py-4 px-5  rounded-lg text-sm w-full uppercase"
           />
         </div>
@@ -73,6 +91,8 @@ const TripForm = ({ data }) => {
           <select
             name="passenger"
             id="passenger"
+            value={formValue.passenger}
+            onChange={handleChange}
             className="bg-gray-200 py-4 px-5 rounded-lg text-sm w-full capitalize"
           >
             {[...Array(3)].map((_, i) => (
