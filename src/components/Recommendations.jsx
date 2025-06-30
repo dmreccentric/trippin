@@ -1,7 +1,7 @@
 import { RecBit } from "./RecBit";
 import { Recommendation } from "../constants/data";
 import { useState } from "react";
-
+import { useGlobalContext } from "./context/GlobalContext";
 import Cardheader from "./Cardheader";
 import PopUp from "./PopUp";
 
@@ -14,8 +14,8 @@ const Recommendations = ({
   filteredItems = [],
   mightLike,
 }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
-
+  // const [selectedItem, setSelectedItem] = useState(null);
+  const { selectedItem, setSelectedItem } = useGlobalContext();
   const fullWidth = widthFull ? "w-full" : "min-w-[18rem]";
   const useGrid = flex ? "flex flex-col" : "flex";
   const rightMargin = margin ? "ml-5 h-fit" : "h-80";

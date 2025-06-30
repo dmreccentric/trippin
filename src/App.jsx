@@ -6,6 +6,7 @@ import Slides from "../src/pages/Slides";
 import PopUp from "./components/PopUp";
 import Explore from "./pages/Explore";
 import Booking from "./pages/Bookings";
+import GlobalContextProvider from "./components/context/GlobalContext";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <GlobalContextProvider>
+      <RouterProvider router={router} />;
+    </GlobalContextProvider>
+  );
 }
 
 export default App;
